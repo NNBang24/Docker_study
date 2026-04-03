@@ -41,6 +41,33 @@ vd :  docker exec -it ec884143c379 bash
 # tao container
 docker run -d -it --name my-cob --restart always ubuntu:latest bash
 ///
+
+# 2 ) Docker images 
+docker pull <image_name>:<tag>  #(quan trong )
+# Tên của imgae , nếu trên docker hub sẽ là tên của repository (quan trong )
+# ví dụ : ubuntu ,my_app ,nginx
+# tag : là nhãn (label) chỉ định phiên bản cụ thể của image
+# ví dụ : latest ,20.04 ,v1.0   
+
+docker images # Kiểm tra các image đang có trong máy local
+#cùng 1 image có thẻ nhiều tag 
+
+
+# Các lệnh xóa images 
+
+## Đây là cách viết ngắn gọn 
+docker rmi <image_name>:<tag>
+docker rmi <image_id>
+
+#đây là cách xóa khi có container đang chạy
+docker rmi -f <image_id>
+## cách viết chính quy
+
+docker image rm <image_name>:<tag>
+docker image rm <image_id>
+
+
+
 ls #la liet ke cac thu muc
 whoami # la ten la gi
 pwd # In ra đường dẫn thư mục hiện tại
